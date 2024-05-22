@@ -5,34 +5,40 @@
 package examen3refactorizado;
 
 /**
- *
- * @author persona
+ * Clase principal del programa de cuentas bancarias
+ * @author Manuel Lago
+ * @version 1
+ * @since 22/05/2024
  */
 public class CCuenta {
 
     /**
-     * @return the dSaldo
+     * Getter del saldo
+     * @return Recuperar el saldo
      */
     public double getdSaldo() {
         return dSaldo;
     }
 
     /**
-     * @param dSaldo the dSaldo to set
+     * Setter del saldo
+     * @param dSaldo Saldo a setear
      */
     public void setdSaldo(double dSaldo) {
         this.dSaldo = dSaldo;
     }
 
     /**
-     * @return the nombre
+     * Getter del nombre
+     * @return Recuperar el nombre
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * @param nombre the nombre to set
+     * Setter del nombre
+     * @param nombre El nombre a setear
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -41,11 +47,19 @@ public class CCuenta {
     private double dSaldo;
     private String nombre;
 
+    /**
+     * Método main
+     * @param args
+     */
     public static void main(String[] args) {
 
         operativa_cuenta(100);
     }
 
+        /**
+         * Método para realizar las operaciones sobre la cuenta
+         * @param cantidad con la que trabajar
+         */
     private static void operativa_cuenta(float cantidad) {
         CCuenta cuenta1 = new CCuenta();
         
@@ -64,7 +78,11 @@ public class CCuenta {
         System.out.println("Saldo tras retirada: " + cuenta1.getdSaldo() + " euros");
     }
 
-    /* Nuevo comentario para el commit, metodo para ingresar cantidades en la cuenta. Modifica el saldo. */
+    /**
+     * Método para realizar ingresos
+     * @param cantidad a ingresar
+     * @return Devuelve el código de error
+     */
     public int ingresar(double cantidad) {
         int iCodErr;
 
@@ -84,8 +102,9 @@ public class CCuenta {
         return iCodErr;
     }
 
-    /*
+    /** 
      * Metodo para retirar cantidades en la cuenta. Modifica el saldo.
+     * @param cantidad a retirar de la cuenta
      */
     public void retirar(double cantidad) {
         if (cantidad <= 0) {
