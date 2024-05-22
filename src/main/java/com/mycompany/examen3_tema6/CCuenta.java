@@ -32,7 +32,7 @@ public class CCuenta {
         System.out.println("Saldo tras retirada: " + miCuenta.dSaldo + " euros");
     }
 
-    /* Metodo para ingresar cantidades en la cuenta. Modifica el saldo. */
+    /* Nuevo comentario para el commit, metodo para ingresar cantidades en la cuenta. Modifica el saldo. */
     public int ingresar(double cantidad) {
         int iCodErr;
 
