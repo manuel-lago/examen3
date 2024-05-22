@@ -65,17 +65,18 @@ public class CCuenta {
         
         System.out.println("Saldo Incial: " + cuenta1.getdSaldo() + " euros");
 
-        cuenta1.ingresar(-100);
+        cuenta1.ingresar(0);
         System.out.println("Saldo Incial: " + cuenta1.getdSaldo() + " euros");
-        cuenta1.ingresar(cantidad);
+        cuenta1.ingresar(-10);
         System.out.println("Saldo tras ingreso: " + cuenta1.getdSaldo() + " euros");
-        cuenta1.ingresar(2000);
-        System.out.println("Saldo tras ingreso: " + cuenta1.getdSaldo() + " euros");
-
-        cuenta1.ingresar(300);
-        System.out.println("Saldo tras ingreso: " + cuenta1.getdSaldo() + " euros");
+        cuenta1.ingresar(4000);
+        System.out.println("Saldo tras ingreso: " + cuenta1.getdSaldo()  + " euros");
+        cuenta1.ingresar(3000);
+        System.out.println("Saldo tras ingreso: " + cuenta1.getdSaldo()  + " euros");
+        cuenta1.ingresar(2999);
+        System.out.println("Saldo tras ingreso: " + cuenta1.getdSaldo()  + " euros");
         cuenta1.retirar(50);
-        System.out.println("Saldo tras retirada: " + cuenta1.getdSaldo() + " euros");
+        System.out.println("Saldo tras retirada: " + cuenta1.getdSaldo()  + " euros");
     }
 
     /**
@@ -85,17 +86,17 @@ public class CCuenta {
      */
     public int ingresar(double cantidad) {
         int iCodErr;
-
-        if (!(cantidad >= 0 || cantidad <= 3000)) {
+        System.out.println("Ingreso de " + cantidad + " euros");
+        if ((cantidad <= 0 || cantidad > 3000)) {
             System.out.println("No se puede ingresar una cantidad negativa ni superior a 3000€ (sin ser notificada con formulario)");
             iCodErr = 1;
         } else if (cantidad == 3000) {
             System.out.println(
                     "Le recordamos que estamos obligados a notificar a Hacienda dicho ingreso (superior o igual a 3000€)");
-            setdSaldo(getdSaldo() + cantidad);
+            dSaldo = dSaldo + cantidad;
             iCodErr = 0;
         } else {
-            setdSaldo(getdSaldo() + cantidad);
+            dSaldo = dSaldo + cantidad;
             iCodErr = 0;
         }
 
